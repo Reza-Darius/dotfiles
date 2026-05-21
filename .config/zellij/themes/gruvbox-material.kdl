@@ -1,0 +1,138 @@
+// Zellij theme: gruvbox-material (dark, medium contrast, material palette)
+// Matches sainnhe/gruvbox-material defaults used by nvim
+//
+// Palette reference:
+//   bg0  #282828  40  40  40   (darkest bg)
+//   bg1  #3c3836  60  56  54   (panel bg / unselected)
+//   bg2  #504945  80  73  69   (selected bg)
+//   bg3  #665c54 102  92  84   (lighter bg accent)
+//   fg0  #d4be98 212 190 152   (main fg)
+//   grey #7c6f64 124 111 100   (muted / comments)
+//   red  #ea6962 234 105  98
+//   orange #e78a4e 231 138  78
+//   yellow #d8a657 216 166  87
+//   green  #a9b665 169 182 101
+//   aqua   #89b482 137 180 130
+//   blue   #7daea3 125 174 163
+//   purple #d3869b 211 134 155
+
+themes {
+    gruvbox-material {
+        text_unselected {
+            base       212 190 152   // fg0
+            background  60  56  54   // bg1
+            emphasis_0 231 138  78   // orange  (mode indicator, active plugin)
+            emphasis_1 169 182 101   // green   (session name, ok states)
+            emphasis_2 216 166  87   // yellow  (keys)
+            emphasis_3 234 105  98   // red  (secondary accent)
+        }
+        text_selected {
+            base       212 190 152   // fg0
+            background  80  73  69   // bg2
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 216 166  87   // yellow
+            emphasis_3 211 134 155   // purple
+        }
+        ribbon_selected {
+            base        40  40  40   // bg0
+            background 231 138  78   // orange  (active tab ribbon fill)
+            emphasis_0 234 105  98   // red     (close / error)
+            emphasis_1 231 138  78   // orange  (modified)
+            emphasis_2 211 134 155   // purple
+            emphasis_3 125 174 163   // blue
+        }
+        ribbon_unselected {
+            base        40  40  40   // bg0
+            background 212 190 152   // fg0     (inactive tab label)
+            emphasis_0 234 105  98   // red
+            emphasis_1 212 190 152   // fg0
+            emphasis_2 125 174 163   // blue
+            emphasis_3 211 134 155   // purple
+        }
+        table_title {
+            base       169 182 101   // green
+            background   0
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 216 166  87   // yellow
+            emphasis_3 211 134 155   // purple
+        }
+        table_cell_selected {
+            base       212 190 152   // fg0
+            background  80  73  69   // bg2
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 216 166  87   // yellow
+            emphasis_3 211 134 155   // purple
+        }
+        table_cell_unselected {
+            base       212 190 152   // fg0
+            background  60  56  54   // bg1
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 216 166  87   // yellow
+            emphasis_3 211 134 155   // purple
+        }
+        list_selected {
+            base       212 190 152   // fg0
+            background  80  73  69   // bg2
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 216 166  87   // yellow
+            emphasis_3 211 134 155   // purple
+        }
+        list_unselected {
+            base       212 190 152   // fg0
+            background  60  56  54   // bg1
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 216 166  87   // yellow
+            emphasis_3 211 134 155   // purple
+        }
+        frame_selected {
+            base       169 182 101   // green  (active pane border)
+            background   0
+            emphasis_0 231 138  78   // orange
+            emphasis_1 169 182 101   // green
+            emphasis_2 211 134 155   // purple
+            emphasis_3   0
+        }
+        frame_highlight {
+            base       231 138  78   // orange (focused pane highlight)
+            background   0
+            emphasis_0 211 134 155   // purple
+            emphasis_1 231 138  78   // orange
+            emphasis_2 231 138  78   // orange
+            emphasis_3 231 138  78   // orange
+        }
+        exit_code_success {
+            base       169 182 101   // green
+            background   0
+            emphasis_0 137 180 130   // aqua
+            emphasis_1  60  56  54   // bg1
+            emphasis_2 211 134 155   // purple
+            emphasis_3 125 174 163   // blue
+        }
+        exit_code_error {
+            base       234 105  98   // red
+            background   0
+            emphasis_0 216 166  87   // yellow
+            emphasis_1   0
+            emphasis_2   0
+            emphasis_3   0
+        }
+        multiplayer_user_colors {
+            player_1  211 134 155   // purple
+            player_2  125 174 163   // blue
+            player_3    0
+            player_4  216 166  87   // yellow
+            player_5  169 182 101   // green
+            player_6    0
+            player_7  234 105  98   // red
+            player_8    0
+            player_9    0
+            player_10   0
+        }
+    }
+}

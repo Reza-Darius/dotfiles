@@ -1,0 +1,7 @@
+[user]
+	name = Darius
+	email = Reza.Blersch@gmail.com
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
