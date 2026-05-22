@@ -72,6 +72,9 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 fpath=($HOME/.zsh-complete $fpath)
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
+
 plugins=(
   zsh-vi-mode
   fzf-tab
@@ -139,6 +142,8 @@ source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"
 
+# colorful tab complete
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # theme for bat
 export BAT_THEME="ansi"
