@@ -73,7 +73,7 @@ DISABLE_AUTO_TITLE="true"
 fpath=($HOME/.zsh-complete $fpath)
 
 plugins=(
-  # zsh-vi-mode
+  zsh-vi-mode
   fzf-tab
 )
 
