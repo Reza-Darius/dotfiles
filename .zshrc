@@ -1,5 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/dotfiles/scripts:$PATH"
+export PATH=$PATH:$GOPATH/bin
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,7 +84,7 @@ fpath=($HOME/.zsh-complete $fpath)
 autoload -U compinit && compinit
 
 plugins=(
-  zsh-vi-mode
+  # zsh-vi-mode
   fzf-tab
 )
 
@@ -117,10 +122,6 @@ alias zshconfig="mate ~/.zshrc"
 # eval "$(oh-my-posh init zsh --config ~/.poshthemes/gruvbox.omp.json)"
 eval "$(starship init zsh)"
 
-export PATH=/usr/local/go/bin:$PATH
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH=$PATH:$GOPATH/bin
 
 # git aliases
 alias gc="git commit -am"
@@ -150,4 +151,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # theme for bat
 export BAT_THEME="ansi"
+
+export RUST_LOG="info"
+export TERM="alacritty"
 
