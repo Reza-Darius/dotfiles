@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# ensure game mode and mimalloc are installed
+LD_PRELOAD="${HOME}/.local/share/mimalloc/out/release/libmimalloc.so" \
+MIMALLOC_ALLOW_LARGE_OS_PAGES=1 \
+exec gamemoderun ${HOME}/.local/share/factorio/bin/x64/factorio "$@"
