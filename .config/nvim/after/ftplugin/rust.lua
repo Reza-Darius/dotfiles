@@ -3,12 +3,17 @@ local bufnr = vim.api.nvim_get_current_buf()
 -- vim.keymap.set({ "n", "v" }, "<C-.>", function()
 --   vim.cmd.RustLsp("codeAction")
 -- end, { silent = true, buffer = bufnr, desc = "Rust code action" })
-vim.keymap.set({ "n", "v" }, "<C-.>", function()
+
+vim.keymap.set({ "n", "v", "i" }, "<C-.>", function()
   local mode = vim.api.nvim_get_mode().mode
   if mode == "v" or mode == "V" then
-    -- force exit visual mode first so '< and '> marks are set correctly
-    vim.cmd("normal! \27") -- escape
+    vim.cmd("normal! \27")
     vim.cmd("'<,'>RustLsp codeAction")
+  elseif mode == "i" then
+    vim.cmd("stopinsert")
+    vim.schedule(function()
+      vim.cmd.RustLsp("codeAction")
+    end)
   else
     vim.cmd.RustLsp("codeAction")
   end

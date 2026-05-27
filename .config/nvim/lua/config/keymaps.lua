@@ -54,5 +54,21 @@ vim.keymap.set("n", "<leader>bo", function()
   end
 end, { desc = "Close other buffers (keep visible ones)" })
 
+local function alnum_forward()
+  -- Move off any current alphanumeric chars (like w leaving the current word)
+  vim.fn.search('[^A-Za-z0-9]', 'W')
+  -- Then jump to the start of the next alphanumeric sequence
+  vim.fn.search('[A-Za-z0-9]', 'W')
+end
+
+local function alnum_backward()
+  -- Move off any current alphanumeric chars going back
+  vim.fn.search('[^A-Za-z0-9]', 'bW')
+  -- Then jump to the start of the previous alphanumeric sequence
+  vim.fn.search('[A-Za-z0-9]', 'bW')
+end
+
+vim.keymap.set({'n', 'x', 'o'}, 'q', alnum_forward,  { desc = 'Next alphanumeric word' })
+vim.keymap.set({'n', 'x', 'o'}, 'Q', alnum_backward, { desc = 'Prev alphanumeric word' })
 
 -- remap leader x to leader d, and leader x x to leader d d

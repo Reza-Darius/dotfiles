@@ -208,7 +208,7 @@ keybinds clear-defaults=true {
         bind "o" { SwitchToMode "session"; }
     }
     shared_except "locked" "tab" "entersearch" "renametab" "renamepane" {
-        bind "tab" { SwitchToMode "tab"; }
+        bind "t" { SwitchToMode "tab"; }
     }
     shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
         bind "p" { SwitchToMode "pane"; }
