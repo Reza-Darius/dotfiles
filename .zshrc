@@ -1,4 +1,7 @@
-# If you come from bash you might have to change your $PATH.
+# =========================================================
+# Path
+# =========================================================
+
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH="$HOME/go/bin:$PATH"
@@ -9,17 +12,78 @@ export PATH=$PATH:$GOPATH/bin
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# =========================================================
+# History
+# =========================================================
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+
+# =========================================================
+# Shell behaviour
+# =========================================================
+
+setopt AUTOCD
+setopt NOBEEP
+setopt NUMERIC_GLOB_SORT  # sort file10 after file9, not after file1
+
+# =========================================================
+# Completion
+# =========================================================
+
+# Load completion system
+autoload -Uz compinit
+
+# Initialize completion with cached metadata file
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+
+# Enable interactive completion menu selection
+zstyle ':completion:*' menu select
+
+# Make completion case-insensitive
+# Example: "doc" can complete to "Documents"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matches upper and lower
+
+# colorful tab complete
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# =========================================================
+# Plugins
+# =========================================================
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+# for ripgprep
+fpath=($HOME/.zsh-complete $fpath)
+
+plugins=(
+  # zsh-vi-mode
+  fzf-tab
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --strip-cwd-prefix'  # strip-cwd-prefix removes the leading ./ from results
+# Ctrl-T uses fd
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Set up zoxide
+eval "$(zoxide init zsh)"
+
+# =========================================================
+# oh-my-zsh configs
+# =========================================================
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -76,20 +140,6 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-# for ripgprep
-fpath=($HOME/.zsh-complete $fpath)
-
-autoload -U compinit && compinit
-
-plugins=(
-  # zsh-vi-mode
-  fzf-tab
-)
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,6 +157,10 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
+# =========================================================
+# Aliases
+# =========================================================
+
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
@@ -119,9 +173,7 @@ fi
 alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# eval "$(oh-my-posh init zsh --config ~/.poshthemes/gruvbox.omp.json)"
 eval "$(starship init zsh)"
-
 
 # git aliases
 alias gc="git commit -am"
@@ -141,17 +193,12 @@ alias zellijc="nvim ~/.config/zellij"
 alias se="sudoedit"
 alias nvimo="nvim /mnt/project-drive/Obsidian Vault/"
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
 
-eval "$(zoxide init zsh)"
+# =========================================================
+# Env variables
+# =========================================================
 
-# colorful tab complete
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# theme for bat
 export BAT_THEME="ansi"
-
 export RUST_LOG="info"
 export TERM="alacritty"
 
