@@ -74,9 +74,19 @@ source $ZSH/oh-my-zsh.sh
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --strip-cwd-prefix'  # strip-cwd-prefix removes the leading ./ from results
-# Ctrl-T uses fd
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+FZF_FD_OPTS="--hidden --follow --exclude '.git'"
+export FZF_DEFAULT_COMMAND="fd ${FZF_FD_OPTS}"
+export FZF_CTRL_T_COMMAND="fd ${FZF_FD_OPTS}"
+export FZF_ALT_C_COMMAND="fd --type d ${FZF_FD_OPTS}"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 
 # Set up zoxide
 eval "$(zoxide init zsh)"
@@ -182,15 +192,15 @@ alias ga="git add -A"
 
 # alias to use ls alternative
 alias ls="eza --icons"
-alias ll="eza -lah --icons"
+alias ll="eza -lah --icons --git"
 alias la="eza -a"
-alias tree="eza --tree"
+alias tree="eza --tree --icons"
+compdef eza=ls
 
 alias zed="zeditor"
 alias nvimc="nvim ~/dotfiles/.config/nvim"
 alias zshc="nvim ~/.zshrc"
 alias zellijc="nvim ~/.config/zellij"
-alias se="sudoedit"
 alias nvimo="nvim /mnt/project-drive/Obsidian Vault/"
 
 
