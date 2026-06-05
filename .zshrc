@@ -74,7 +74,8 @@ source $ZSH/oh-my-zsh.sh
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-FZF_FD_OPTS="--hidden --follow --exclude '.git'"
+# Overwrites to use fd
+FZF_FD_OPTS="--hidden --follow --strip-cwd-prefix --exclude '.git'"
 export FZF_DEFAULT_COMMAND="fd ${FZF_FD_OPTS}"
 export FZF_CTRL_T_COMMAND="fd ${FZF_FD_OPTS}"
 export FZF_ALT_C_COMMAND="fd --type d ${FZF_FD_OPTS}"
@@ -83,7 +84,6 @@ _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" . "$1"
 }
 
-# Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
