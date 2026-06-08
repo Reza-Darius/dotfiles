@@ -11,8 +11,8 @@ vim.keymap.set("n", "a", function()
   return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "a"
 end, { expr = true, noremap = true })
 
-vim.keymap.set("n", "<leader>ww", "<C-W>c", { desc = "Close window" })
-vim.keymap.set("n", "<leader>wn", "<C-w>v", { desc = "Vertical split" })
+-- vim.keymap.set("n", "<leader>ww", "<C-W>c", { desc = "Close window" })
+-- vim.keymap.set("n", "<leader>wn", "<C-w>v", { desc = "Vertical split" })
 
 vim.keymap.set("n", "<leader>dd", "<leader>xx", {remap = true})
 vim.keymap.set("n", "<leader>dD", "<leader>xX", {remap = true})

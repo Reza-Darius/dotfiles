@@ -8,9 +8,10 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/dotfiles/scripts:$PATH"
 export PATH=$PATH:$GOPATH/bin
-
-# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath=($HOME/.zsh-complete $fpath)
 
 # =========================================================
 # History
@@ -40,7 +41,7 @@ setopt NUMERIC_GLOB_SORT  # sort file10 after file9, not after file1
 # =========================================================
 
 # Load completion system
-autoload -Uz compinit
+autoload -U compinit 
 
 # Initialize completion with cached metadata file
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
@@ -59,10 +60,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Plugins
 # =========================================================
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-# for ripgprep
-fpath=($HOME/.zsh-complete $fpath)
 
 plugins=(
   # zsh-vi-mode
