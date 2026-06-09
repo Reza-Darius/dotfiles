@@ -60,9 +60,9 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Plugins
 # =========================================================
 
-
 plugins=(
   # zsh-vi-mode
+  docker
   fzf-tab
 )
 
@@ -199,7 +199,6 @@ alias nvimc="nvim ~/dotfiles/.config/nvim"
 alias zshc="nvim ~/.zshrc"
 alias zellijc="nvim ~/.config/zellij"
 alias nvimo="nvim /mnt/project-drive/Obsidian Vault/"
-
 
 # =========================================================
 # Env variables
