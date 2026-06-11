@@ -23,13 +23,14 @@ return {
         hl("@property", p.fg1, p.none)
         hl("@module", p.fg1, p.none)
         hl("@namespace", p.fg1, p.none)
-        hl("@string", p.yellow, p.none)
+        hl("@string", p.aqua, p.none)
 
         -- Rust specific config
         hl("@keyword.operator.rust", p.red, p.none)
         hl("@constant.rust", p.fg1, p.none)
         hl("@constant.builtin.rust", p.fg1, p.none)
-        hl("@function.macro.rust", p.aqua, p.none)
+        hl("@function.macro.rust", p.yellow, p.none)
+        hl("@attribute.rust", p.yellow, p.none)
 
         -- LSP color config
         hl("@lsp.type.interface.rust", p.yellow, p.none)
@@ -54,13 +55,18 @@ return {
         -- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
         --   vim.api.nvim_set_hl(0, group, {})
         -- end
+
+        -- GO config
+        hl("@constant.builtin.go", p.purple, p.none)
+        hl("@lsp.type.namespace.go", p.fg1, p.none)
+        hl("@lsp.type.type.go", p.blue, p.none)
       end,
     })
 
     vim.g.gruvbox_material_disable_italic_comment = true
     vim.g.gruvbox_material_enable_italic = false
     -- vim.g.gruvbox_material_background = "hard"
-    vim.g.gruvbox_material_ui_contrast = "high"
+    -- vim.g.gruvbox_material_ui_contrast = "high"
     vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
     vim.g.gruvbox_material_diagnostic_line_highlight = true
     vim.cmd.colorscheme("gruvbox-material")

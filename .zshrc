@@ -198,6 +198,7 @@ alias zed="zeditor"
 alias nvimc="nvim ~/dotfiles/.config/nvim"
 alias zshc="nvim ~/.zshrc"
 alias zellijc="nvim ~/.config/zellij"
+alias za="zellij a"
 alias nvimo="nvim /mnt/project-drive/Obsidian Vault/"
 
 # =========================================================

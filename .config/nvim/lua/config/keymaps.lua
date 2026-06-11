@@ -11,24 +11,9 @@ vim.keymap.set("n", "a", function()
   return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "a"
 end, { expr = true, noremap = true })
 
--- vim.keymap.set("n", "<leader>ww", "<C-W>c", { desc = "Close window" })
--- vim.keymap.set("n", "<leader>wn", "<C-w>v", { desc = "Vertical split" })
 
 vim.keymap.set("n", "<leader>dd", "<leader>xx", {remap = true})
 vim.keymap.set("n", "<leader>dD", "<leader>xX", {remap = true})
-
--- -- make it so bw delets a buffer
--- vim.keymap.set("n", "<leader>bw", "<leader>bd", {
---    remap = true,
---   desc = "Delete Buffer",
--- })
---
--- vim.keymap.set("n", "<leader>bW", "<leader>bD", {
---   remap = true,
---   desc = "Delete Buffer and Window",
--- })
--- vim.keymap.del("n", "<leader>bd")
--- vim.keymap.del("n", "<leader>bD")
 
 -- rebinding notification window
 vim.keymap.set("n", "<leader>dn", function()
@@ -61,6 +46,7 @@ local function alnum_forward()
   vim.fn.search('[A-Za-z0-9]', 'W')
 end
 
+-- function for q button in normal mode
 local function alnum_backward()
   -- Move off any current alphanumeric chars going back
   vim.fn.search('[^A-Za-z0-9]', 'bW')
