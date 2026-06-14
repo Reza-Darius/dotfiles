@@ -59,7 +59,25 @@ return {
         -- GO config
         hl("@constant.builtin.go", p.purple, p.none)
         hl("@lsp.type.namespace.go", p.fg1, p.none)
+        hl("@lsp.type.property.go", p.fg1, p.none)
         hl("@lsp.type.type.go", p.blue, p.none)
+        hl("@lsp.type.type.go", p.blue, p.none)
+        hl("@lsp.mod.interface", p.yellow, p.none)
+        hl("@lsp.typemod.variable.interface.go", p.fg1, p.none)
+        hl("@lsp.typemod.property.definition.go", p.fg1, p.none)
+        hl("@lsp.typemod.parameter.interface.go", p.fg1, p.none)
+        hl("@lsp.typemod.property.interface.go", p.fg1, p.none)
+        hl("@lsp.parameter.interface.go", p.fg1, p.none)
+        hl("@lsp.typemod.variable.readonly.go", p.purple, p.none)
+
+        -- Zig config
+        hl("@lsp.type.namespace.zig", p.fg1, p.none)
+        hl("@lsp.type.type.zig", p.blue, p.none)
+        hl("@lsp.type.struct.zig", p.blue, p.none)
+        hl("@lsp.type.enumMember", p.yellow, p.none)
+        hl("@lsp.type.property.zig", p.yellow, p.none)
+        hl("@lsp.mod.static.zig", p.purple, p.none)
+
       end,
     })
 

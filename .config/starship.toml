@@ -89,7 +89,7 @@ symbol = " "
 tag_symbol = '  '
 
 [golang]
-symbol = " "
+symbol = "󰟓 "
 style = "blue bold"
 
 [gradle]

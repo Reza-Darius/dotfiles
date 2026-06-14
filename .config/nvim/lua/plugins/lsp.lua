@@ -4,5 +4,11 @@ return {
     inlay_hints = {
       enabled = false,
     },
+    servers = {
+      zls = {
+        enable_build_on_save = true,
+        build_on_save_step = "check",
+      },
+    },
   },
 }
