@@ -53,8 +53,7 @@ local function alnum_backward()
   -- Then jump to the start of the previous alphanumeric sequence
   vim.fn.search('[A-Za-z0-9]', 'bW')
 end
-
 vim.keymap.set({'n', 'x', 'o'}, 'q', alnum_forward,  { desc = 'Next alphanumeric word' })
 vim.keymap.set({'n', 'x', 'o'}, 'Q', alnum_backward, { desc = 'Prev alphanumeric word' })
 
--- remap leader x to leader d, and leader x x to leader d d
+vim.keymap.set("n", "r", "cl")
