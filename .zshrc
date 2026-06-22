@@ -2,12 +2,16 @@
 # Path
 # =========================================================
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/go/bin:$PATH
+# Golang
 export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/dotfiles/scripts:$PATH"
 export PATH=$PATH:$GOPATH/bin
+export PATH=/usr/local/go/bin:$PATH
+
+# Rust/Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$HOME/dotfiles/scripts:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
