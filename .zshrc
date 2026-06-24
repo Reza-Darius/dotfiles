@@ -96,6 +96,11 @@ eval "$(zoxide init zsh)"
 # Set up try
 eval "$(try init ~/src/tries)"
 
+# Set man pages to use bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER='nvim +Man!'
+export MANROFFOPT="-c"
+
 # =========================================================
 # oh-my-zsh configs
 # =========================================================
