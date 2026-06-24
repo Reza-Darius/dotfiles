@@ -24,6 +24,7 @@ fpath=($HOME/.zsh-complete $fpath)
 HISTFILE="$XDG_STATE_HOME/zsh/history"
 HISTSIZE=100000
 SAVEHIST=100000
+HISTORY_IGNORE="(cd|pwd|exit|cd)*"
 
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
@@ -91,6 +92,9 @@ _fzf_compgen_dir() {
 
 # Set up zoxide
 eval "$(zoxide init zsh)"
+
+# Set up try
+eval "$(try init ~/src/tries)"
 
 # =========================================================
 # oh-my-zsh configs
