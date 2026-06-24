@@ -57,3 +57,4 @@ vim.keymap.set({'n', 'x', 'o'}, 'q', alnum_forward,  { desc = 'Next alphanumeric
 vim.keymap.set({'n', 'x', 'o'}, 'Q', alnum_backward, { desc = 'Prev alphanumeric word' })
 
 vim.keymap.set("n", "r", "cl")
+
