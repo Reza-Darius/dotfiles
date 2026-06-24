@@ -3,7 +3,6 @@
 TOOLS=(
     cargo-clean-all
     cargo-nextest
-    tokei
 )
  
 echo "Installing cargo tools..."

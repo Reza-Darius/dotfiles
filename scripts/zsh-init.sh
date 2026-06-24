@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# installs fzf tab and zsh completions
+
 mkdir -p "$XDG_CACHE_HOME/zsh/"
 mkdir -p "$XDG_STATE_HOME/zsh/"
 
