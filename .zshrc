@@ -2,6 +2,9 @@
 # Path
 # =========================================================
 
+# Keep paths unique
+typeset -U path PATH
+
 # Golang
 export PATH="$HOME/go/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
