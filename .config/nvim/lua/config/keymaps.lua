@@ -58,3 +58,10 @@ vim.keymap.set({'n', 'x', 'o'}, 'Q', alnum_backward, { desc = 'Prev alphanumeric
 
 vim.keymap.set("n", "r", "cl")
 
+vim.keymap.set({ "n", "x", "o" }, ",", function()
+  vim.cmd("normal! ;")
+end)
+
+vim.keymap.set({ "n", "x", "o" }, ";", function()
+  vim.cmd("normal! ,")
+end)
