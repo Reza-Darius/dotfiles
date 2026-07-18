@@ -69,6 +69,7 @@ return {
         hl("@lsp.typemod.property.interface.go", p.fg1, p.none)
         hl("@lsp.parameter.interface.go", p.fg1, p.none)
         hl("@lsp.typemod.variable.readonly.go", p.purple, p.none)
+        hl("@lsp.typemod.variable.defaultLibrary.go", p.purple, p.none)
 
         -- Zig config
         hl("@lsp.type.namespace.zig", p.fg1, p.none)
@@ -77,7 +78,6 @@ return {
         hl("@lsp.type.enumMember", p.yellow, p.none)
         hl("@lsp.type.property.zig", p.yellow, p.none)
         hl("@lsp.mod.static.zig", p.purple, p.none)
-
       end,
     })
 
