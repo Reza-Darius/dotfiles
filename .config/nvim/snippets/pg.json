@@ -1,0 +1,16 @@
+{
+  "pk": {
+    "prefix": "pkid",
+    "body": [
+      "id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY"
+    ],
+    "description": "integer identity primary key"
+  },
+  "pkuuid": {
+    "prefix": "pkuuid",
+    "body": [
+      "id UUID PRIMARY KEY DEFAULT gen_random_uuid()"
+    ],
+    "description": "uuid primary key"
+  }
+}
