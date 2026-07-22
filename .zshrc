@@ -69,7 +69,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # =========================================================
 
 plugins=(
-  # zsh-vi-mode
+  zsh-vi-mode
   docker
   fzf-tab
 )

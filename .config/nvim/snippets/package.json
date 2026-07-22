@@ -5,6 +5,10 @@
       {
         "language": "go",
         "path": "./go.json"
+      },
+      {
+        "language": "sql",
+        "path": "./pg.json"
       }
     ]
   }

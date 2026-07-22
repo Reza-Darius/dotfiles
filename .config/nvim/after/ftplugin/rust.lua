@@ -1,9 +1,6 @@
 local bufnr = vim.api.nvim_get_current_buf()
 
--- vim.keymap.set({ "n", "v" }, "<C-.>", function()
---   vim.cmd.RustLsp("codeAction")
--- end, { silent = true, buffer = bufnr, desc = "Rust code action" })
-
+-- -- C-. for code action like vscode/zed
 vim.keymap.set({ "n", "v", "i" }, "<C-.>", function()
   local mode = vim.api.nvim_get_mode().mode
   if mode == "v" or mode == "V" then
@@ -19,6 +16,17 @@ vim.keymap.set({ "n", "v", "i" }, "<C-.>", function()
   end
 end, { silent = true, buffer = bufnr, desc = "Rust code action" })
 
+-- vim.keymap.set(
+--   "n",
+--   "<leader>a",
+--   function()
+--     vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
+--     -- or vim.lsp.buf.codeAction() if you don't want grouping.
+--   end,
+--   { silent = true, buffer = bufnr }
+-- )
+
+-- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
 vim.keymap.set("n", "K", function()
   vim.cmd.RustLsp({ "hover", "actions" })
 end, { silent = true, buffer = bufnr, desc = "Rust hover actions" })
