@@ -15,5 +15,6 @@ return {
     opts.formatters_by_ft.bash = { "shfmt" }
     opts.formatters_by_ft.sh = { "shfmt" }
     opts.formatters_by_ft.sql = { "sqlfluff" }
+    opts.formatters_by_ft.asm = { "asmfmt" }
   end,
 }

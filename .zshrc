@@ -25,9 +25,9 @@ fpath=($HOME/.zsh-complete $fpath)
 # =========================================================
 
 HISTFILE="$XDG_STATE_HOME/zsh/history"
-HISTSIZE=100000
-SAVEHIST=100000
-HISTORY_IGNORE="(cd|pwd|exit|cd)*"
+HISTSIZE=10000 # amount of commands
+SAVEHIST=10000
+HISTORY_IGNORE="(cd|pwd|exit|cd|clear|ll)*"
 
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
