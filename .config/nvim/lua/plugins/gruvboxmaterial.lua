@@ -56,7 +56,7 @@ return {
         --   vim.api.nvim_set_hl(0, group, {})
         -- end
 
-        -- GO config
+        -- GO
         hl("@constant.builtin.go", p.purple, p.none)
         hl("@lsp.type.namespace.go", p.fg1, p.none)
         hl("@lsp.type.property.go", p.fg1, p.none)
@@ -71,13 +71,17 @@ return {
         hl("@lsp.typemod.variable.readonly.go", p.purple, p.none)
         hl("@lsp.typemod.variable.defaultLibrary.go", p.purple, p.none)
 
-        -- Zig config
+        -- Zig
         hl("@lsp.type.namespace.zig", p.fg1, p.none)
         hl("@lsp.type.type.zig", p.blue, p.none)
         hl("@lsp.type.struct.zig", p.blue, p.none)
         hl("@lsp.type.enumMember", p.yellow, p.none)
         hl("@lsp.type.property.zig", p.yellow, p.none)
         hl("@lsp.mod.static.zig", p.purple, p.none)
+
+        -- C
+        hl(" @lsp.type.class.c", p.blue, p.none)
+
       end,
     })
 

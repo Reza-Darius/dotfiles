@@ -101,6 +101,7 @@ eval "$(try init ~/src/tries)"
 
 # Set man pages to use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="less -R --use-color -Dd+r -Du+b"
 # export MANPAGER='nvim +Man!'
 export MANROFFOPT="-c"
 
