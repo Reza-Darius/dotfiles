@@ -81,6 +81,7 @@ return {
 
         -- C
         hl(" @lsp.type.class.c", p.blue, p.none)
+        hl("@lsp.type.property.c", p.fg1, p.none)
 
       end,
     })

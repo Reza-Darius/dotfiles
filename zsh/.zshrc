@@ -218,6 +218,10 @@ alias zellijc="nvim ~/.config/zellij"
 alias za="zellij a"
 alias nvimo="nvim /mnt/project-drive/Obsidian Vault/"
 
+# FZF for pacman
+alias pacq="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+
 # =========================================================
 # Env variables
 # =========================================================
