@@ -93,11 +93,9 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# Set up zoxide
 eval "$(zoxide init zsh)"
-
-# Set up try
 eval "$(try init ~/src/tries)"
+eval "$(starship init zsh)"
 
 # Set man pages to use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -196,8 +194,6 @@ fi
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-eval "$(starship init zsh)"
 
 # git aliases
 alias gc="git commit -am"

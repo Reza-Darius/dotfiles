@@ -1,2 +1,3 @@
 .config/go/telemetry
+.config/nvim/.cache
 *.bak.*
