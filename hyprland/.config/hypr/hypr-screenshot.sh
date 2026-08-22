@@ -19,7 +19,7 @@
 
 set -euo pipefail
 
-OUTPUT_DIR="${SCREENSHOT_DIR:-$HOME/Pictures/screenshots}"
+OUTPUT_DIR="${SCREENSHOT_DIR:-$HOME/Pictures/Screenshots}"
 [[ -d $OUTPUT_DIR ]] || mkdir -p "$OUTPUT_DIR"
 
 SCREENSHOT_EDITOR="${SCREENSHOT_EDITOR:-satty}"
