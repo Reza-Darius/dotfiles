@@ -7,7 +7,7 @@ local terminal = "foot"
 local fileManager = "nautilus"
 local browser = "google-chrome-stable"
 local note_app = "obsidian"
-local screenshot = "~/.config/hypr/screenshot.sh"
+local screenshot = "~/.config/hypr/hypr-screenshot.sh"
 
 ---------------------
 ---- KEYBINDINGS ----

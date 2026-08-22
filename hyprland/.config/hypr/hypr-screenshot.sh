@@ -28,8 +28,8 @@ SCREENSHOT_EDITOR="${SCREENSHOT_EDITOR:-satty}"
 ARGS=()
 for arg in "$@"; do
   case $arg in
-    --editor=*) SCREENSHOT_EDITOR="${arg#--editor=}" ;;
-    *) ARGS+=("$arg") ;;
+  --editor=*) SCREENSHOT_EDITOR="${arg#--editor=}" ;;
+  *) ARGS+=("$arg") ;;
   esac
 done
 set -- "${ARGS[@]:-}"
@@ -132,20 +132,20 @@ FILENAME="screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
 FILEPATH="$OUTPUT_DIR/$FILENAME"
 
 case "$PROCESSING" in
-  slurp)
-    grim -g "$SELECTION" "$FILEPATH" || exit 1
-    echo "$FILEPATH"
-    wl-copy <"$FILEPATH"
-    (
-      ACTION=$(notify-send "Screenshot saved to clipboard and file" "Click to edit" -t 10000 -i "$FILEPATH" -A "default=edit")
-      [[ $ACTION == "default" ]] && open_editor "$FILEPATH"
-    ) >/dev/null 2>&1 &
-    ;;
-  copy)
-    grim -g "$SELECTION" - | wl-copy
-    ;;
-  save)
-    grim -g "$SELECTION" "$FILEPATH" || exit 1
-    echo "$FILEPATH"
-    ;;
+slurp)
+  grim -g "$SELECTION" "$FILEPATH" || exit 1
+  echo "$FILEPATH"
+  wl-copy <"$FILEPATH"
+  (
+    ACTION=$(notify-send -a "hypr-screenshot" "Screenshot saved to clipboard and file" "Click to edit" -t 10000 -i "$FILEPATH" -A "default=edit")
+    [[ $ACTION == "default" ]] && open_editor "$FILEPATH"
+  ) >/dev/null 2>&1 &
+  ;;
+copy)
+  grim -g "$SELECTION" - | wl-copy
+  ;;
+save)
+  grim -g "$SELECTION" "$FILEPATH" || exit 1
+  echo "$FILEPATH"
+  ;;
 esac
