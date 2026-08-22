@@ -95,6 +95,7 @@ _fzf_compgen_dir() {
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(mise activate zsh)"
 
 # Set man pages to use bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
