@@ -144,6 +144,16 @@ hl.config({
 	},
 })
 
+-- imv config
+--
+hl.window_rule({
+	name = "imv-float",
+	match = { class = "imv" },
+	float = true,
+	size = {"(monitor_w*0.9)", "(monitor_h*0.9)"},
+	center = true,
+})
+
 -- noctalia blur
 hl.layer_rule({
 	name = "noctalia",

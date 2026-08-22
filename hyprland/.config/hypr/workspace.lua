@@ -23,9 +23,17 @@ hl.window_rule({
 
 hl.window_rule({
     name = "obsidian",
-    match = { class = "Obsidian" },
+    match = { class = "md.obsidian.Obsidian" },
     monitor = "DP-1",
     workspace = 4,
+})
+
+
+hl.window_rule({
+    name = "reader",
+    match = { class = "org.gnome.Evince" },
+    monitor = "DP-1",
+    workspace = 5,
 })
 
 hl.workspace_rule({ workspace = 1, monitor = "DP-2", persistent = true, default_name = "secondary" })
