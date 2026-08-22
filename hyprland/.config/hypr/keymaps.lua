@@ -7,6 +7,7 @@ local terminal = "foot"
 local fileManager = "nautilus"
 local browser = "google-chrome-stable"
 local note_app = "obsidian"
+local screenshot = "~/.config/hypr/screenshot.sh"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -18,7 +19,7 @@ local ipc = "noctalia msg "
 -- noctalia binds
 hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
+hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
