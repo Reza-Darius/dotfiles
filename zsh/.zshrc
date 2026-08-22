@@ -94,7 +94,6 @@ _fzf_compgen_dir() {
 }
 
 eval "$(zoxide init zsh)"
-eval "$(try init ~/src/tries)"
 eval "$(starship init zsh)"
 
 # Set man pages to use bat
@@ -208,8 +207,12 @@ alias tree="eza --tree --icons"
 compdef eza=ls
 
 alias zed="zeditor"
-alias nvimc="nvim ~/dotfiles/.config/nvim"
+
+# config shortcuts
+alias nvimc="nvim ~/.config/nvim"
 alias zshc="nvim ~/.zshrc"
+alias hyprc="nvim ~/.config/hypr"
+
 alias zellijc="nvim ~/.config/zellij"
 alias za="zellij a"
 alias nvimo="nvim /mnt/project-drive/Obsidian Vault/"
@@ -224,5 +227,5 @@ alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sud
 
 export BAT_THEME="ansi"
 export RUST_LOG="info"
-export TERM="alacritty"
+export TERM="foot"
 

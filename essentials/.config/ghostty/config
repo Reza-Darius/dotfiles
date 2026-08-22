@@ -1,8 +1,5 @@
-# Dynamic theme colors
-config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
-
 # Font
-font-family = "JetBrainsMono Nerd Font"
+font-family = "Hack Nerd Font"
 font-style = Regular
 font-size = 12
 
@@ -42,3 +39,4 @@ async-backend = epoll
 
 command = zsh
 shell-integration = zsh
+theme = noctalia

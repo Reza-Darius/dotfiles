@@ -10,3 +10,6 @@ vim.g.snacks_scroll = false
 vim.opt.scrolloff = 0
 vim.opt.smoothscroll = false
 vim.g.autoformat = false
+
+vim.opt.clipboard = "unnamedplus"
+
