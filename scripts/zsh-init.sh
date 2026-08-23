@@ -4,7 +4,7 @@
 
 mkdir -p "$XDG_CACHE_HOME/zsh/"
 mkdir -p "$XDG_STATE_HOME/zsh/"
-touch "$XDG_STATE_HOME/zsh/history"
+# touch "$XDG_STATE_HOME/zsh/history"
 
 PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 
