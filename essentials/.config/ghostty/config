@@ -1,7 +1,11 @@
 # Font
-font-family = "Geist Mono Nerd Font"
+font-family = "GeistMono Nerd Font"
 font-style = Regular
 font-size = 12
+
+font-feature = +calt
+font-feature = +liga
+font-feature = +dlig
 
 # Window
 window-theme = ghostty

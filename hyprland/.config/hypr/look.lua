@@ -8,11 +8,18 @@ hl.config({
 		gaps_in = 0,
 		gaps_out = 0,
 		border_size = 1,
+
+    layout      = "dwindle",
+    resize_on_border = true,
+    allow_tearing = false,
 	},
 
 	decoration = {
-		rounding = 0,
+		rounding = 1,
 		rounding_power = 2,
+
+    active_opacity   = 0.99,
+    inactive_opacity = 0.9,
 
 		shadow = {
 			enabled = true,
@@ -21,14 +28,18 @@ hl.config({
 			color = 0xee1a1a1a,
 		},
 
-		blur = {
-			enabled = true,
-			size = 3,
-			passes = 2,
-			vibrancy = 0.1696,
-		},
+    blur = {
+      enabled = true,
+      new_optimizations = true,
+      ignore_opacity = true,
+
+      size    = 8,
+      passes  = 4,
+      vibrancy = 0.17,
+    },
 	},
 })
+
 
 -- Animations
 hl.curve("water", {
@@ -144,14 +155,30 @@ hl.config({
 	},
 })
 
--- imv config
---
+------------------------------------------------------------
+-- WINDOW RULES
+------------------------------------------------------------
+
 hl.window_rule({
 	name = "imv-float",
 	match = { class = "imv" },
 	float = true,
 	size = {"(monitor_w*0.9)", "(monitor_h*0.9)"},
 	center = true,
+})
+
+hl.window_rule({
+  name    = "document viewer",
+  match   = { class = "org.gnome.Evince" },
+  opacity = "1.0 override 1.0 override",
+})
+
+-- -- Fully opaque for things that shouldn't be see-through (video, images)
+hl.window_rule({
+  name    = "opaque-media",
+  match   = { class = "^(mpv|vlc|.*[Ii]mv|feh)$" },
+  opacity = "1.0 override 1.0 override",
+  no_blur = true,
 })
 
 -- noctalia blur
