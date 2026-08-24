@@ -118,7 +118,6 @@ hl.animation({ leaf = "borderangle", enabled = true, speed = 3.5, bezier = "flow
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
 hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
 hl.window_rule({
@@ -168,6 +167,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "browser-focu",
+	match = { class = "google-chrome" },
+  focus_on_activate = true,
+})
+
+hl.window_rule({
 	name = "satty-float",
 	match = { class = "com.gabm.satty" },
 	float = true,
@@ -181,11 +186,11 @@ hl.window_rule({
   opacity = "1.0 override 1.0 override",
 })
 
--- -- Fully opaque for things that shouldn't be see-through (video, images)
 hl.window_rule({
   name    = "opaque-media",
   match   = { class = "^(mpv|vlc|.*[Ii]mv|feh)$" },
   opacity = "1.0 override 1.0 override",
+  fullscreen = true,
   no_blur = true,
 })
 
