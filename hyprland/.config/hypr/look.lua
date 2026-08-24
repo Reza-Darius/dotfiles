@@ -163,7 +163,15 @@ hl.window_rule({
 	name = "imv-float",
 	match = { class = "imv" },
 	float = true,
-	size = {"(monitor_w*0.9)", "(monitor_h*0.9)"},
+	size = {"(monitor_w*0.8)", "(monitor_h*0.8)"},
+	center = true,
+})
+
+hl.window_rule({
+	name = "satty-float",
+	match = { class = "com.gabm.satty" },
+	float = true,
+	size = {"(monitor_w*0.8)", "(monitor_h*0.8)"},
 	center = true,
 })
 
