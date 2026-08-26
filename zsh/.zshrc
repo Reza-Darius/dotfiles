@@ -230,6 +230,9 @@ export BAT_THEME="ansi"
 export RUST_LOG="info"
 export TERM="foot"
 
+# place cargo non-enduser build artifacts at a central location
+export CARGO_BUILD_BUILD_DIR="${XDG_CACHE_HOME}/cargo/build/{workspace-path-hash}"
+
 # FZF theme
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \

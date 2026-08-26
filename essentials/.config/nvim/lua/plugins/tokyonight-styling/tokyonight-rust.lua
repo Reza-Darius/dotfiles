@@ -43,9 +43,9 @@ return {
       hl["@type.definition.rust"] = { fg = type_blue }
 
       -- Proc macro styling
-      hl["@attribute.rust"] = { fg = white } -- #[derive(...)] / proc & attribute macros
-      hl["@lsp.type.decorator.rust"] = { fg = white } -- #[derive(...)] / proc & attribute macros
-      hl["@lsp.type.builtinAttribute.rust"] = { fg = white } -- #[derive(...)] / proc & attribute macros
+      hl["@attribute.rust"] = { fg = white }
+      hl["@lsp.type.decorator.rust"] = { fg = white }
+      hl["@lsp.type.builtinAttribute.rust"] = { fg = white }
       hl["@lsp.type.derive.rust"] = { fg = gold }
 
       hl["@function.macro.rust"] = { fg = gold } -- format!, println!, vec!, ...

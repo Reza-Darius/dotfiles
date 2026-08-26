@@ -1,4 +1,4 @@
-if true then return {} end
+-- if true then return {} end
 
 return {
   "sainnhe/gruvbox-material",
@@ -94,6 +94,6 @@ return {
     vim.g.gruvbox_material_ui_contrast = "low"
     vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
     vim.g.gruvbox_material_diagnostic_line_highlight = true
-    vim.cmd.colorscheme("gruvbox-material")
+    -- vim.cmd.colorscheme("gruvbox-material")
   end,
 }
