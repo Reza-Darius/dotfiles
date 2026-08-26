@@ -14,16 +14,16 @@ local screenshot = "~/.config/hypr/hypr-screenshot.sh"
 ---------------------
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local ipc = "noctalia msg "
 
 -- noctalia binds
+local ipc = "noctalia msg "
+
 hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. "+C", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 
-
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 
 -- App keybinds
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
