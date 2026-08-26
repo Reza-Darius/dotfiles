@@ -26,9 +26,9 @@ return {
       -- local operator_color = c.fg     -- #89ddff  operators incl. &
       local func_blue = c.blue -- #7aa2f7  functions/methods
 
-      ---------------------------------------------------------------------
-      -- Treesitter captures (nvim-treesitter rust queries)
-      ---------------------------------------------------------------------
+      --===================================================================
+      -- Rust Config
+      --===================================================================
       hl["@keyword.rust"] = { fg = purple }
       hl["@keyword.function.rust"] = { fg = purple }
       hl["@keyword.return.rust"] = { fg = purple }
@@ -200,6 +200,17 @@ return {
       hl["rustFuncCall"] = { fg = func_blue }
 
       hl["rustIdentifier"] = { fg = white }
+
+      --===================================================================
+      -- C Config
+      --===================================================================
+      hl["@lsp.type.parameter.c"] = { fg = white }
+
+      hl["@type.builtin.c"] = { fg = type_blue }
+      hl["@lsp.typemod.class.defaultLibrary.c"] = { fg = type_blue }
+      hl["@lsp.typemod.type.defaultLibrary.c"] = { fg = type_blue }
+
+      hl["@lsp.typemod.function.defaultLibrary.c"] = { fg = func_blue }
     end
   end,
 }
