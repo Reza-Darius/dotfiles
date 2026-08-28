@@ -208,6 +208,7 @@ alias tree="eza --tree --icons"
 compdef eza=ls
 
 alias zed="zeditor"
+alias spot="spotify_player"
 
 # config shortcuts
 alias nvimc="nvim ~/.config/nvim"

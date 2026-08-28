@@ -211,6 +211,17 @@ return {
       hl["@lsp.typemod.type.defaultLibrary.c"] = { fg = type_blue }
 
       hl["@lsp.typemod.function.defaultLibrary.c"] = { fg = func_blue }
+
+      --===================================================================
+      -- Go Config
+      --===================================================================
+      hl["@function.builtin.go"] = { fg = type_blue }
+      hl["@lsp.type.parameter.go"] = { fg = white }
+      hl["@constant.builtin.go"] = { fg = orange }
+      hl["@lsp.typemod.type.interface.go"] = { fg = gold }
+      hl["@lsp.typemod.type.defaultLibrary.go"] = { fg = type_blue }
+      hl["@lsp.typemod.function.defaultLibrary.go"] = { fg = func_blue }
+      hl["@lsp.typemod.variable.readonly.go"] = { fg = orange }
     end
   end,
 }
