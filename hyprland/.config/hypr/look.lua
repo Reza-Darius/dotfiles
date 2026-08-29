@@ -40,6 +40,11 @@ hl.config({
 	},
 })
 
+hl.config({
+  dwindle = {
+    force_split = 2
+  }
+})
 
 -- Animations
 hl.curve("water", {
