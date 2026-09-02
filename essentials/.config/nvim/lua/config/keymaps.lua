@@ -59,6 +59,9 @@ vim.keymap.set({'n', 'x', 'o'}, 'Q', alnum_backward, { desc = 'Prev alphanumeric
 
 vim.keymap.set("n", "r", "cl")
 
+-- make it so pasting doesnt replace the register with what we pasted over
+vim.keymap.set({"n", "x"}, "p", "P")
+
 vim.keymap.set({ "n", "x", "o" }, ",", function()
   vim.cmd("normal! ;")
 end)
