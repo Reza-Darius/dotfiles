@@ -55,6 +55,7 @@ return {
       hl["@constant.builtin.rust"] = { fg = orange }
       hl["@number.rust"] = { fg = orange }
       hl["@boolean.rust"] = { fg = orange }
+      hl["@lsp.type.const.rust"] = { fg = orange }
 
       hl["@variable.builtin.rust"] = { fg = red } -- self
 

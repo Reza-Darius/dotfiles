@@ -94,6 +94,5 @@ return {
     vim.g.gruvbox_material_ui_contrast = "low"
     vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
     vim.g.gruvbox_material_diagnostic_line_highlight = true
-    -- vim.cmd.colorscheme("gruvbox-material")
   end,
 }

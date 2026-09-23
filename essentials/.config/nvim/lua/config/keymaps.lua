@@ -2,19 +2,20 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- jj for normal mode
 vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 
+-- auto ident on new line
 vim.keymap.set("n", "i", function()
   return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "i"
 end, { expr = true, noremap = true })
-
 vim.keymap.set("n", "a", function()
   return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "a"
 end, { expr = true, noremap = true })
 
-
-vim.keymap.set("n", "<leader>dd", "<leader>xx", {remap = true})
-vim.keymap.set("n", "<leader>dD", "<leader>xX", {remap = true})
+-- remap diagnostics sceen
+vim.keymap.set("n", "<leader>dd", "<leader>xx", { remap = true })
+vim.keymap.set("n", "<leader>dD", "<leader>xX", { remap = true })
 
 -- rebinding notification window
 vim.keymap.set("n", "<leader>dn", function()
@@ -42,30 +43,30 @@ end, { desc = "Close other buffers (keep visible ones)" })
 
 local function alnum_forward()
   -- Move off any current alphanumeric chars (like w leaving the current word)
-  vim.fn.search('[^A-Za-z0-9]', 'W')
+  vim.fn.search("[^A-Za-z0-9]", "W")
   -- Then jump to the start of the next alphanumeric sequence
-  vim.fn.search('[A-Za-z0-9]', 'W')
+  vim.fn.search("[A-Za-z0-9]", "W")
 end
 
 -- function for q button in normal mode
 local function alnum_backward()
   -- Move off any current alphanumeric chars going back
-  vim.fn.search('[^A-Za-z0-9]', 'bW')
+  vim.fn.search("[^A-Za-z0-9]", "bW")
   -- Then jump to the start of the previous alphanumeric sequence
-  vim.fn.search('[A-Za-z0-9]', 'bW')
+  vim.fn.search("[A-Za-z0-9]", "bW")
 end
-vim.keymap.set({'n', 'x', 'o'}, 'q', alnum_forward,  { desc = 'Next alphanumeric word' })
-vim.keymap.set({'n', 'x', 'o'}, 'Q', alnum_backward, { desc = 'Prev alphanumeric word' })
+vim.keymap.set({ "n", "x", "o" }, "q", alnum_forward, { desc = "Next alphanumeric word" })
+vim.keymap.set({ "n", "x", "o" }, "Q", alnum_backward, { desc = "Prev alphanumeric word" })
 
 vim.keymap.set("n", "r", "cl")
 
 -- make it so pasting doesnt replace the register with what we pasted over
-vim.keymap.set({"n", "x"}, "p", "P")
+vim.keymap.set({ "n", "x" }, "p", "P")
 
+-- reverse , and ;
 vim.keymap.set({ "n", "x", "o" }, ",", function()
   vim.cmd("normal! ;")
 end)
-
 vim.keymap.set({ "n", "x", "o" }, ";", function()
   vim.cmd("normal! ,")
 end)

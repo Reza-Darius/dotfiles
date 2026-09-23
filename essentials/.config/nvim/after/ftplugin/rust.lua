@@ -16,10 +16,12 @@ vim.keymap.set({ "n", "v", "i" }, "<C-.>", function()
   end
 end, { silent = true, buffer = bufnr, desc = "Rust code action" })
 
+-- render compiler error
 vim.keymap.set("n", "<leader>cD", function()
   vim.cmd.RustLsp({ "renderDiagnostic", "current" })
 end, { silent = true, buffer = bufnr, desc = "Render Rust diagnostic" })
 
+-- open docs.rs link
 vim.keymap.set("n", "<leader>cx", function()
   vim.cmd.RustLsp("openDocs")
 end, { silent = true, buffer = bufnr, desc = "Open docs.rs for Object" })
