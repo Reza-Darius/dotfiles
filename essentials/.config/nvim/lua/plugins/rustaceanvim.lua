@@ -8,18 +8,19 @@ return {
       server = {
         default_settings = {
           ["rust-analyzer"] = {
-            checkOnSave = { command = "clippy" },
-            inlayHints = {
-              bindingModeHints = { enable = false },
-              chainingHints = { enable = false },
-              closureCaptureHints = { enable = false },
-              closureReturnTypeHints = { enable = "never" },
-              lifetimeElisionHints = { enable = "never" },
-              parameterHints = { enable = false },
-              typeHints = { enable = false },
-              reborrowHints = { enable = "never" },
-              renderColons = false,
-            },
+            checkOnSave = true,
+            check = { command = "clippy" },
+            -- inlayHints = {
+            --   bindingModeHints = { enable = false },
+            --   chainingHints = { enable = false },
+            --   closureCaptureHints = { enable = false },
+            --   closureReturnTypeHints = { enable = "never" },
+            --   lifetimeElisionHints = { enable = "never" },
+            --   parameterHints = { enable = false },
+            --   typeHints = { enable = false },
+            --   reborrowHints = { enable = "never" },
+            --   renderColons = false,
+            -- },
           },
         },
       },

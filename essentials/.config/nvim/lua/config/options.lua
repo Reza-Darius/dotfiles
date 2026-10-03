@@ -4,7 +4,6 @@
 
 vim.opt.relativenumber = true
 
--- disable animations
 vim.g.snacks_animate = false
 vim.g.snacks_scroll = false
 vim.opt.scrolloff = 0
