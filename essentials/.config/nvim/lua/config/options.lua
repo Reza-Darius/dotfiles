@@ -10,5 +10,7 @@ vim.opt.scrolloff = 0
 vim.opt.smoothscroll = false
 vim.g.autoformat = false
 
+vim.opt.termguicolors = true
+
 vim.opt.clipboard = "unnamedplus"
 

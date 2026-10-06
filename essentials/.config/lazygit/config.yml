@@ -1,0 +1,22 @@
+gui:
+  theme:
+    activeBorderColor:
+      - '#a9b665' # Green (active window border)
+      - bold
+    inactiveBorderColor:
+      - '#7c6f64' # Muted grey/brown (inactive window border)
+    optionsTextColor:
+      - '#7daea3' # Aqua / Blue accent for help text
+    selectedLineBgColor:
+      - '#32302f' # Soft dark background for selected items
+    cherryPickedCommitBgColor:
+      - '#d8a657' # Yellow / Orange accent
+    cherryPickedCommitFgColor:
+      - '#282828' # Dark foreground contrast
+    unstagedChangesColor:
+      - '#ea6962' # Soft red for unstaged changes
+    defaultFgColor:
+      - '#d4be98' # Warm cream foreground text
+    searchingActiveBorderColor:
+      - '#e78a4e' # Orange accent when searching
+
