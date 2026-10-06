@@ -3,7 +3,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       lazygit = {
-        configure = false,
+        -- configure = false,
         -- theme = nil,
       },
       styles = {
