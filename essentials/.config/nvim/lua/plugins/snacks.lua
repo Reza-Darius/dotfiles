@@ -7,6 +7,7 @@ return {
         -- theme = nil,
       },
       styles = {
+        -- use terminal colors
         lazygit = { wo = { winhighlight = "NormalFloat:Normal" } },
       },
     },
