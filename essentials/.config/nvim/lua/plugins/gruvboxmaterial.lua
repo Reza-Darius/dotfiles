@@ -41,7 +41,7 @@ return {
         hl("@lsp.type.derive.rust", p.yellow, p.none)
         hl("@lsp.type.const.rust", p.purple, p.none)
         hl("@lsp.type.lifetime.rust", p.yellow, p.none)
-        hl("@lsp.typemod.variable.callable.rust", p.green, p.none)
+        -- hl("@lsp.typemod.variable.callable.rust", p.green, p.none)
         vim.api.nvim_set_hl(0, "@lsp.type.struct.rust", { link = "@type" })
         vim.api.nvim_set_hl(0, "@lsp.type.enum.rust", { link = "@type" })
         vim.api.nvim_set_hl(0, "@lsp.type.builtinType.rust", { link = "@type" })

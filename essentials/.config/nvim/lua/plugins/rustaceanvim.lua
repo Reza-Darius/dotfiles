@@ -10,6 +10,14 @@ return {
           ["rust-analyzer"] = {
             checkOnSave = true,
             check = { command = "clippy" },
+            hover = {
+              documentation = {
+                enable = true,
+                keywords = {
+                  enable = true,
+                },
+              },
+            },
             -- inlayHints = {
             --   bindingModeHints = { enable = false },
             --   chainingHints = { enable = false },

@@ -38,12 +38,12 @@ require("window")
 
 hl.on("hyprland.start", function() 
 	hl.exec_cmd("noctalia")
+  -- Config for screen sharing
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+  -- utility for auto mounting usb drives
+	-- hl.exec_cmd("udiskie")
 end)
 
--- Config for screen sharing
-hl.on("hyprland.start", function() 
-	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-end)
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
